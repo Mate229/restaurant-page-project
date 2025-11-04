@@ -4,6 +4,7 @@ export function initialLoad() {
     const content = document.querySelector('#content');
     content.classList.remove('menu');
     content.classList.add('home');
+    content.classList.remove('about');
 
     content.innerHTML = '';
 

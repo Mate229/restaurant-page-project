@@ -125,6 +125,7 @@ export default function() {
     const content = document.querySelector('#content');
     content.classList.add('menu');
     content.classList.remove('home');
+    content.classList.remove('about');
 
     content.innerHTML = '';
 
