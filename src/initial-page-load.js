@@ -5,6 +5,7 @@ export function initialLoad() {
 
     const image = document.createElement('img');
     image.src = restImage;
+    image.id = 'present-img'
 
     const descrip = document.createElement('div');
     const descTitle = document.createElement('h1');
