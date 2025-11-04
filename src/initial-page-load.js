@@ -2,6 +2,10 @@ import restImage from './keesha-s-kitchen-9VKY7SXjHXE-unsplash.jpg';
 
 export function initialLoad() {
     const content = document.querySelector('#content');
+    content.classList.remove('menu');
+    content.classList.add('home');
+
+    content.innerHTML = '';
 
     const image = document.createElement('img');
     image.src = restImage;
@@ -21,7 +25,7 @@ export function initialLoad() {
     const businessHoursDiv = document.createElement('div');
     businessHoursDiv.innerHTML = '<h3>Hours</h3> <p>Thursday to Sunday: 11am to 9pm</p>';
     const contactDiv = document.createElement('div');
-    contactDiv.innerHTML = '<h3>Contact</h3> <p>01345678678</p>'
+    contactDiv.innerHTML = '<h3>Contact</h3> <p>01345678678</p> <p>mixfood@nomail.fake</p>'
     infoSections.append(locationDiv, businessHoursDiv, contactDiv);
     infoSections.id = 'infos'
 
