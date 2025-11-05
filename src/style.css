@@ -1,3 +1,11 @@
+:root {
+    --hd-clr: #ff8c42;
+    --bt-clr: #aba361;
+    --send-btn-clr: #007200;
+    --white-clr:#ffffff;
+    --ft-clr: #293241;
+}
+
 * {
     box-sizing: border-box;
 }
@@ -9,8 +17,7 @@ body {
     height: 100dvh;
 
     display: grid;
-    grid-template-rows: 30px 1fr;
-    gap: 20px;
+    grid-template-rows: 50px 1fr;
 }
 
 h1, h2, h3, h4, h5, h6, p {
@@ -23,9 +30,11 @@ header {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 20px;
-    padding: 10px 20px 0;
+    padding: 0 20px;
     width: 100%;
     align-items: center;
+    background-color: var(--hd-clr);
+    box-shadow: 0 0 .5rem;
 }
 
 header > h1 {
@@ -46,14 +55,19 @@ button {
     padding: 6px 12px;
     cursor: pointer;
     transition: all .3s ease;
-}
-
-button:disabled {
-    cursor: text;
+    background-color: inherit;
 }
 
 button:hover, button:active {
     transform: scale(1.1);
+    text-decoration: underline;
+}
+
+button:disabled {
+    cursor: text;
+    background-color: var(--bt-clr);
+    color: var(--white-clr);
+    text-decoration: none;
 }
 
 /* CONTENT */
@@ -73,8 +87,24 @@ button:hover, button:active {
     gap: 40px;
 }
 
+.image-wrapper {
+    position: relative;
+}
+
 #present-img {
     width: min(80vw, 800px);
+}
+
+.photo-credit {
+    position: absolute;
+    bottom: 5px;
+    right: 10px;
+    color: var(--white-clr);
+    text-shadow: 0 0 2px;
+}
+
+a {
+    color: inherit;
 }
 
 #description {
@@ -177,4 +207,40 @@ button:hover, button:active {
 
 .contact-me:hover {
     transform: scale(1.2);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-self: center;
+    gap: 10px;
+    box-shadow: 0 0 5px;
+    padding: 20px;
+    width: min(100%, 800px);
+}
+
+form > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+form button {
+    background-color: var(--send-btn-clr);
+    align-self: center;
+}
+
+form button:hover {
+    text-decoration: none;
+}
+
+footer {
+    background-color: var(--ft-clr);
+    width: 100%;
+    justify-content: center;
+    color: white;
+    display: flex;
+    align-items: center;
+    padding-bottom: 5px;
+    padding-top: 5px;
 }

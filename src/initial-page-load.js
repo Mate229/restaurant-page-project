@@ -8,9 +8,19 @@ export function initialLoad() {
 
     content.innerHTML = '';
 
+    const imageWrapper = document.createElement('div');
+    imageWrapper.classList.add('image-wrapper');
+
     const image = document.createElement('img');
     image.src = restImage;
     image.id = 'present-img'
+
+    const creditPhoto = document.createElement('h5');
+    creditPhoto.innerHTML = `Photo by <a href="https://unsplash.com/fr/@keeshasskitchen?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText" target="_blank">Keesha's Kitchen</a> on <a href="https://unsplash.com/fr/photos/un-bol-de-nourriture-9VKY7SXjHXE?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText" target="_blank">Unsplash</a>`;
+    creditPhoto.classList.add('photo-credit');
+
+    imageWrapper.append(image, creditPhoto);
+
 
     const descrip = document.createElement('div');
     const descTitle = document.createElement('h1');
@@ -30,5 +40,5 @@ export function initialLoad() {
     infoSections.append(locationDiv, businessHoursDiv, contactDiv);
     infoSections.id = 'infos'
 
-    content.append(image, descrip, infoSections)
+    content.append(imageWrapper, descrip, infoSections)
 }

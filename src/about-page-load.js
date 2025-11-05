@@ -72,5 +72,21 @@ export default function() {
 
     wrapper.appendChild(teamMemberDisplay);
 
-    content.append(ourStory, wrapper);
+    const messageSection = document.createElement('div');
+    messageSection.innerHTML = `<h1>Contact US</h1> <form>
+        <div><label for="fullname">Your Full Name:</label><input type="text" id="fullname" placeholder="Ex: Mate Chef"></div>
+        <div><label for="email">Your Email:</label><input type="email" placeholder="Ex: abc@cde.xyz" id="email"></div>
+        <div><label for="message">Message:</label><textarea name="message" id="message"></textarea></div><button type="submit">Send</button>
+    </form>`
+
+    content.append(ourStory, wrapper, messageSection);
+
+    const sendButton = document.querySelector('[type="submit"]');
+    sendButton.addEventListener('click', (e) => {
+        alert(`We've recieved your details, we'll send you a mail shortly`);
+        e.preventDefault();
+
+        const form = document.querySelector('form');
+        form.reset();
+    })
 }
